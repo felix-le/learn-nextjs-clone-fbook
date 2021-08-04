@@ -21,7 +21,6 @@ import { useSession, signOut } from 'next-auth/client';
 
 const Header = () => {
   const [session, loading] = useSession();
-  console.log('🚀 ~ file: Header.js ~ line 24 ~ Header ~ loading', loading);
 
   return (
     <div className='sticky top-0 z-50 bg-white flex items-center lg:px-5 shadow-md'>
