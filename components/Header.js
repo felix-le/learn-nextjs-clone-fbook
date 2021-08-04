@@ -26,7 +26,7 @@ const Header = () => {
           <SearchIcon className='h-6 text-gray-600' />
           <input
             type='text'
-            className='flex ml-2 items-center bg-transparent outline-none'
+            className='hidden md:inline-flex flex ml-2 items-center bg-transparent outline-none'
             name=''
             id=''
             placeholder='Search Facebook'
@@ -44,8 +44,14 @@ const Header = () => {
         </div>
       </div>
 
-      {/* widgets */}
-      <div>widgets</div>
+      {/* right */}
+      <div className='flex items-center sm:space-x-2 justify-end'>
+        <p className='font-semibold pr-3 whitespace-normal'>Felix Le</p>
+        <ViewGridIcon className='icon' />
+        <ChatIcon className='icon' />
+        <BellIcon className='icon' />
+        <ChevronDownIcon className='icon' />
+      </div>
     </div>
   );
 };

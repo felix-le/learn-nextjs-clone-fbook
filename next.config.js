@@ -1,6 +1,9 @@
 module.exports = {
   reactStrictMode: false,
   images: {
-    domains: ['somelinks.com', 'otherlinks.com'],
+    domains: [
+      'https://platform-lookaside.fbsbx.com/',
+      'firebasestorage.googleapis.com',
+    ],
   },
 };
