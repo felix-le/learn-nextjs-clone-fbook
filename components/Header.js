@@ -16,7 +16,13 @@ import {
   SearchIcon,
   ShoppingCartIcon,
 } from '@heroicons/react/outline';
+
+import { useSession, signOut } from 'next-auth/client';
+
 const Header = () => {
+  const [session, loading] = useSession();
+  console.log('🚀 ~ file: Header.js ~ line 24 ~ Header ~ loading', loading);
+
   return (
     <div className='sticky top-0 z-50 bg-white flex items-center lg:px-5 shadow-md'>
       {/* Left */}
@@ -46,6 +52,17 @@ const Header = () => {
 
       {/* right */}
       <div className='flex items-center sm:space-x-2 justify-end'>
+        {!loading && (
+          <Image
+            onClick={signOut}
+            className='rounded-full cursor-pointer h-40 w-60'
+            src={session.user.image}
+            alt='avatar'
+            width='40'
+            height='40'
+            layout='fixed'
+          />
+        )}
         <p className='font-semibold pr-3 whitespace-normal'>Felix Le</p>
         <ViewGridIcon className='icon' />
         <ChatIcon className='icon' />
